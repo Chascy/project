@@ -9,6 +9,11 @@
 <body>
     <h1>Home</h1>
 
+    <form action="/edit-user/{{$user->id}}" method="GET">
+        @method('GET')
+        @csrf
+        <button type="submit">Profile</button>
+    </form>
     <form action="{{ route('create') }}" method="GET">
         @method('GET')
         <button type="submit">Create</button>
@@ -20,9 +25,18 @@
     </form>
 
     @foreach ($notes as $note)
+        <div>{{ $note->user->name }}</div>
         <div>{{ $note->title }}</div>
         <div>{{ $note->description }}</div>
-        <div>{{ $note->note }}</div>
+        <div>{{ $note->context }}</div>
+        <form action="{{ route('edit', ['id' => $note->id]) }}" method="GET">
+            @method('GET')
+            <button type="submit">Edit</button>
+        </form>
+        <form action="{{ route('showNote', ['id' => $note->id]) }}" method="GET">
+            @method('GET')
+            <button type="submit">View</button>
+        </form>
         <hr>
     @endforeach
 </body>

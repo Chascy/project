@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Note;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
     public function showAllNotes(){
-        $notes = Note::orderBy('updated_at', 'desc')->get();
-        return view('welcome', ['notes' => $notes]);
+        $user = Auth::user();
+        $userNotes = Note::where('user_id', $user->id)->get();
+
+        return view('welcome', ['notes' => $userNotes, 'user' => $user]);
     }
 
     public function create(){
@@ -20,9 +23,10 @@ class NoteController extends Controller
         $note = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'note' => 'required',
+            'context' => 'required',
         ]);
 
+        $note['user_id'] = Auth::user()->id;
         $createNote = Note::create($note);
         $createNote->save();
 
@@ -43,7 +47,7 @@ class NoteController extends Controller
         $updateNote = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'note' => 'required',
+            'context' => 'required',
         ]);
 
         $note = Note::find($request->id);

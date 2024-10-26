@@ -16,9 +16,11 @@
         <input type="text" name="title" id="title" value="{{ $note->title }}" required><br>
         <label for="description">Description:</label>
         <input type="text" name="description" id="description" value="{{ $note->description }}" required><br>
-        <label for="note">Title:</label>
-        <textarea name="note" id="note" cols="30" rows="10" value="{{ $note->note }}" required></textarea><br>
-        <button type="submit">Create</button>
+        <label for="context">Note:</label>
+        <textarea name="context" id="context" cols="20" rows="2" required>
+            {{ $note->context }}
+        </textarea><br>
+        <button type="submit">Update</button>
     </form>
     <form action="/" method="GET">
         @method('GET')

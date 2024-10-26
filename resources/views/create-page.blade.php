@@ -16,8 +16,8 @@
         <input type="text" name="title" id="title" required><br>
         <label for="description">Description:</label>
         <input type="text" name="description" id="description" required><br>
-        <label for="note">Title:</label>
-        <textarea name="note" id="note" cols="30" rows="10"></textarea><br>
+        <label for="context">Note:</label>
+        <textarea name="context" id="context" cols="20" rows="2" required></textarea><br>
         <button type="submit">Create</button>
     </form>
     <form action="/" method="GET">

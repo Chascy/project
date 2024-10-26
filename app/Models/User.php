@@ -46,7 +46,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function user(){
-        return $this->hasMany(User::class, 'user_id');
+    public function userNotes(){
+        return $this->hasMany(Note::class, 'user_id');
     }
 }
