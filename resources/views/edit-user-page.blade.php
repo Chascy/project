@@ -12,11 +12,13 @@
     <form action="{{ route('updateUser', ['id' => $user->id]) }}" method="POST">
         @method('PUT')
         @csrf
-        <div>Name: {{ $user->name }}</div>
-        <div>Email: {{ $user->email }}</div>
-        <div>Password: {{ $user->password }}</div>
-        <hr>
-        <button type="submit">Edit</button>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ $user->name }}" required><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="{{ $user->email }}" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="{{ $user->password }}" required><br>
+        <button type="submit">Update</button>
     </form>
     <form action="/" method="GET">
         @method('GET')

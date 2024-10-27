@@ -10,7 +10,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function editUser(Request $request){
-        $user = User::find($request->id)->get();
+        $user = User::find($request->id);
         return view('edit-user-page', ['user' => $user]);
     }
 

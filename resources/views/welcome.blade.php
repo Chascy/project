@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Home</h1>
-
-    <form action="/edit-user/{{$user->id}}" method="GET">
+    {{-- <a href="/user-edit/{{$user->id}}">Profile</a> --}}
+    <form action="{{ route('editUser', ['id' => $user->id]) }}" method="GET">
         @method('GET')
         @csrf
         <button type="submit">Profile</button>
