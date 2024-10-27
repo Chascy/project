@@ -1,3 +1,456 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+/* ============================== bg */
+.background {
+ 
+    @apply bg-gradient-to-t from-slate-500 to-zinc-800
+    min-h-screen;
+    
+}
+
+/* ============================== page header */
+
+.main-wrapper-header {
+    @apply flex flex-row    text-white shadow-lg shadow-slate-700
+    bg-gradient-to-b from-amber-500 to-orange-500
+    px-2 py-4 sm:px-4 lg:px-24;
+    max-width: 100vw;
+    width: 100%;
+    
+}
+
+.main-wrapper-header ul {
+    @apply flex w-full sm:px-8 md:px-10 justify-between items-center
+    items-center gap-4 sm:gap-8 lg:gap-12; /* Reduce padding on smaller screens */
+    ; 
+}
+
+.main-wrapper-header li {
+  @apply text-[12px] sm:text-base lg:text-lg font-medium;
+     /* Adjust gap and text size responsively */
+    font-family: 'Lucida Sans';
+}
+
+.main-wrapper-header img {
+    @apply w-[200px] h-[50px] min-w-[150px] min-h-max
+    sm:w-[220px] sm:h-[60px] md:w-[250px] md:h-[70px] lg:w-[300px] lg:h-[80px] 
+    /* ml-[55px] sm:ml-[20px] md:ml-[50px] */
+    mr-[10px] sm:mr-[20px] md:mr-[30px];
+}
+/* ============================== page main content wrapper */
+
+.main-wrapper-home{
+    @apply flex flex-col items-center justify-center bg-gradient-to-b from-amber-200 to-zinc-50 
+    my-0 mx-auto p-5 relative;
+    width: 80%; /* Set a width for the wrapper */
+    max-width: 1200px;
+ /* This centers the wrapper horizontally */
+    min-height: 100vh;  
+    /* para lang to pag gusto ko na buong page, pero pag sa home, kahit hindi na*/
+}
+
+/* ============================== page main content wrapper -> sub header*/
+
+.wrapper-header{
+   @apply  w-full -mx-5 absolute top-0 sm:h-10 lg:h-16 items-center
+   bg-gradient-to-l from-yellow-200 to-yellow-400   ;
+
+}
+
+.sub-wrapper-home{
+
+    @apply flex flex-wrap  justify-center gap-6  
+    mt-[60px] mb-[200px] sm:mb-[450px] md:mb-[700px]
+    ;
+}
+/* ============================== page main content wrapper -> note thumbnail */
+
+.card {
+/* cursor-pointer */
+    @apply p-4 h-auto  rounded-[0.75rem] shadow-md relative bg-slate-50 flex-col items-center justify-center
+    w-[300px] max-w-[450px] min-w-[250px]
+    sm:w-[50%] md:w-[270px];
+    
+    h2.title-card {
+    @apply cursor-pointer bg-amber-400 p-2 mt-[-20px] text-center justify-center;
+    font-family: 'Verdana';
+    font-weight: 600;
+    }
+
+    p.description {
+        @apply w-[max] h-auto overflow-y-auto p-1  
+        my-1 font-normal italic; 
+
+         /* font-family: "Arial"; */
+         word-wrap: break-word;
+         overflow-wrap: break-word;
+         white-space: normal;
+
+        scrollbar-width: none; /* Firefox: hides the scrollbar */
+        -ms-overflow-style: none; /* IE and Edge: hides the scrollbar */
+    }
+       
+    p.note-content {
+      @apply w-full h-[100px] overflow-y-auto p-2  my-2 font-normal; 
+
+       /* font-family: "Arial"; */
+       
+       word-wrap: break-word;
+       overflow-wrap: break-word;
+       white-space: normal;
+
+      scrollbar-width: 2px; /* Firefox: hides the scrollbar */
+      -ms-overflow-style: none; /* IE and Edge: hides the scrollbar */
+  }
+
+    div.date{
+        @apply flex flex-row left-0 italic font-medium;
+        font-size: x-small;
+    }
+
+    div.options {
+        @apply  cursor-pointer flex flex-row ml-12 gap-[15px]  border-orange-300 items-center justify-center; 
+        font-family: 'Verdana';
+        font-weight: 400;
+    }
+
+  }
+
+/* ==============================  content container - all*/
+
+.main-wrapper-create {
+    @apply  flex flex-col justify-center mx-auto mb-[10%] gap-2 rounded-xl
+    w-[90%] min-h-[400px] p-5  overflow-hidden
+    bg-slate-50 shadow-md ;
+    /* @apply bg-gradient-to-tl from-amber-200 to-slate-50; */
+    /* @apply bg-gradient-to-br from-slate-50 to-orange-200; */
+    max-width: 750px;
+    max-height: 600px;
+
+}  
+
+/* ==============================  content container - all - sub header*/
+
+.sub-header-wrapper{
+  @apply flex flex-col justify-center bg-amber-500 w-auto  
+  w-full absolute
+  -mx-5 top-0 h-16 pb-1 lg:pt-3
+  /* py-6 lg:py-10 sm:h-20 lg:h-16 -mx-5 -mt-14 sm:mt-[-80px]  text-white  */
+  ;
+ 
+}
+
+/* ==============================  content container - all - content wrapper*/
+
+.sub-wrapper-create{
+    @apply flex flex-col h-[40px]
+    /* wrapper checker */
+    /* bg-red-500 */
+    max-w-[700px] max-h-[60px] 
+    ;
+
+}
+
+/* ==============================  content container - all - content wrapper - content css*/
+
+.label-format{
+    @apply sm:text-[8px] sm:gap-3 md:text-xs md:gap-8 lg:text-lg  lg:gap-14;
+    @apply font-sans w-[200px] mr-2 text-base font-medium;
+    /* font-size: 23px;
+    font-weight: 400; */
+}
+input,textarea{
+    @apply border-[2px] border-orange-300 w-full rounded-l;
+
+
+    /* kay textarea md:w-[540px] lg:w-[540px] */
+}
+
+
+/* ==============================  content container - all - content wrapper - button css*/
+  .button-option{
+      @apply flex flex-row justify-center gap-2
+
+      mt-2 -mb-5 sm:ml-[300px] md:ml-[300px] lg:ml-[400px] ;
+  }
+  button{
+    @apply flex py-[5px] px-[16px] 
+    sm:py-[7px] sm:px-[11px] md:py-[9px] md:px-[25px] lg:py-[11px] lg:px-[27px]
+    ; 
+
+  @apply border-2 border-orange-400 rounded-[20px] text-orange-400 font-semibold ;
+  /*  text-white bg-yellow-500*/
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  }
+
+  button.ok{
+  @apply hover:bg-green-600 hover:border-white hover:text-white;
+  }
+  button.maybe{
+  @apply hover:bg-yellow-300 hover:border-white hover:text-white;
+  }
+  button.notok{
+    @apply hover:bg-red-600 hover:border-white hover:text-white;
+    }
+
+/* ==============================  content container - all - content wrapper - VIEW css*/
+
+.view-title{
+  @apply cursor-pointer p-2 mt-[-10px] justify-center;
+  font-family: 'Verdana';
+  font-weight: 600;
+}
+
+.view-description{
+  @apply w-full  min-h-[100px] max-h-[120px] overflow-y-auto font-normal italic; 
+
+  /* font-family: "Arial"; */
+  
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+ scrollbar-width: none; /* Firefox: hides the scrollbar */
+ -ms-overflow-style: none; 
+}
+
+.view-content{
+  @apply w-full h-[100px] overflow-y-auto font-normal; 
+
+    
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+ scrollbar-width: none; /* Firefox: hides the scrollbar */
+ -ms-overflow-style: none; 
+}
+
+
+
+
+
+
+
+
+
+/* ====================================  OTHER*/
+
+.box {
+        @apply bg-slate-50 text-center w-52 h-40;
+    }
+    
+/* ==================================== */
+.popup{
+
+    .overlay{
+        @apply fixed top-0 left-0 w-[100vw] h-[100vh] bg-slate-500 z-[1] ;
+        opacity: 70%;
+        display: none;
+        
+    }
+
+    .content{
+        @apply absolute top-[50%] left-[50%] bg-white w-[450px]
+        h-[220px] z-[2] text-center p-5 ;
+        transform:translate(-50%, -50%)scale(0);
+    
+    }
+    
+    .close-btn{
+        @apply absolute right-5 top-5 w-[30px] h-[30px] bg-slate-900 text-white
+        text-center rounded-[50%];
+    
+        font-size:25px;
+        font-weight: 600;
+        line-height: 25px;
+        color:#ffff;
+    }
+}
+
+.popup.active .overlay{
+    
+    @apply block;
+
+}
+
+.popup.active  .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+/* ==================================== */
+
+
+
+
+
+/* ============================== LANDING PAGE*/
+
+.main-wrapper-landing{
+    @apply flex flex-col items-center justify-center  
+    /* bg-gradient-to-b from-orange-400 to-amber-400 */
+    bg-gradient-to-b from-amber-500 to-orange-500
+
+    w-full h-screen max-h-[90%] max-w-full
+    my-2 mx-auto p-5 overflow-hidden;
+
+}
+
+.sub-wrapper-landing{
+    @apply flex flex-col justify-center text-center mx-auto
+    sm:w-[150%] sm:h-[120%] md:w-[400px] md:h-[500px]
+     /* wrapper checker */
+    /* bg-red-400   */
+    max-h-full max-w-full
+    w-[320px] h-[400px] ;
+
+}
+
+.logo-wrapper-landing{
+    @apply flex mt-20 justify-center    /* wrapper checker */
+    bg-slate-50
+
+    /* @apply w-[200px] h-[50px] min-w-[150px] min-h-max
+    sm:w-[220px] sm:h-[60px] md:w-[250px] md:h-[70px] lg:w-[300px] lg:h-[80px]  */
+    
+    min-w-[250px] min-h-[80px] max-w-[300px] max-h-[130px];
+}
+    /* 360 yung smallest vp */
+
+.Landing-form{
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    background-color: #171717;
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+  }
+  
+  .form:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+  }
+  
+  #heading {
+    text-align: center;
+    margin: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+  }
+  
+  .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  
+  .input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: white;
+  }
+  
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+  }
+  
+  .form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+  }
+  
+  .button1 {
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .button1:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .button2 {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .button2:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .button3 {
+    margin-bottom: 3em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .button3:hover {
+    background-color: red;
+    color: white;
+  }
+
+}
+
+
+
+
+
+
+
+
+@layer components{
+} 
+
+
+/* git add -f .  */
