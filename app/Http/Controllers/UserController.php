@@ -11,14 +11,14 @@ class UserController extends Controller
 {
     public function editUser(Request $request){
         $user = User::find($request->id);
-        return view('edit-user-page', ['user' => $user]);
+        return view('profile-page', ['user' => $user]);
     }
 
     public function updateUser(Request $request){
         $updateUser = $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'nullable',
         ]);
 
         $user = User::find($request->id);

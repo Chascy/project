@@ -12,7 +12,7 @@ class NoteController extends Controller
         $user = Auth::user();
         $userNotes = Note::where('user_id', $user->id)->get();
 
-        return view('welcome', ['notes' => $userNotes, 'user' => $user]);
+        return view('main-page', ['notes' => $userNotes, 'user' => $user]);
     }
 
     public function create(){
@@ -35,7 +35,7 @@ class NoteController extends Controller
 
     public function showNote(Request $request){
         $note = Note::find($request->id);
-        return view('show-note', ['note' => $note]);
+        return view('view-page', ['note' => $note]);
     }
 
     public function edit(Request $request){

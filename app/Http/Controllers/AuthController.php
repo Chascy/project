@@ -8,7 +8,7 @@ use App\Models\User;
 class AuthController extends Controller
 {
     public function login(){
-        return view('login-page');
+        return view('landing-login');
     }
 
     public function loginPost(Request $request){
@@ -24,7 +24,7 @@ class AuthController extends Controller
     }
 
     public function register(){
-        return view('register-page');
+        return view('landing-register');
     }
 
     public function registerPost(Request $request){
