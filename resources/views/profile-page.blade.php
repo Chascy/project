@@ -1,31 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @extends('template')
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body class="background">
-    @include('components.mainHeader')
-    <div class="main-wrapper-home">
-        <div class="wrapper-header"><h4 class="ml-4 my-2 lg:my-4 relative font-semibold text-base md:text-[20px]">PROFILE : </h4></div>
+<div class="main-wrapper-create  absolute top-[50px] lg:top-[75px] object-top">
+
+    <div class="sub-header-wrapper"><div class="sub-wrapper-create mx-5 lg:-mt-5"></div></div>
+
+
+    
+<div class="flex flex-row justify-center gap-3" >
+    <div class=" h-[250px] w-[250px] bg-slate-400 hidden sm:block ">>
+        <div>hellooo</div>
     </div>
-    <form action="{{ route('updateUser', ['id' => $user->id]) }}" method="POST">
-        @method('PUT')
-        @csrf
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="{{ $user->name }}" required><br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" value="{{ $user->email }}" required><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" value="{{ $user->password }}" required><br>
-        <button type="submit">Update</button>
-    </form>
-    <form action="/" method="GET">
-        @method('GET')
-        <button type="submit">Back</button>
-    </form>
-</body>
-</html>
+
+
+        <form action="" method=""  class="flex flex-col w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px]">
+            
+            <div class="flex flex-col gap-3 " >
+
+                    <div class="flex flex-col h-[50px] ">   
+                        <label for="description" class="label-format">Name :</label>                        
+                        <input type="text" name="name" id="name"  value="fafawf" class="flex flex-grow h-[40px] w-full ml-2" required><br>
+                    </div>
+            
+                    <div class="flex flex-col h-[50px]  ">    
+                        <label for="note" class="label-format">Email :</label>
+                        <input type="email" name="email" id="email" value="fafawf" class="flex w-full h-[40px]  ml-2" required><br>
+
+                    </div>          
+                    
+                    
+                    <div class="flex flex-col h-[50px] ">    
+                        <label for="note" class="label-format">Password :</label>
+                        <input type="password" name="password" id="password" value="fafawf" class="flex flex-grow w-full  h-[40px] ml-2"required><br>
+                        
+                    </div>            
+
+
+                    <div class="button-option ">
+                        <button type="submit" class="ok">Save</button>
+                        <button type="submit" class="notok">Delete</button>
+                    </div>
+                </div>    
+
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+
